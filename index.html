@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reds Contracting</title>
+    
+    <meta name="description" content="Reds Contracting provides expert home renovation and construction services throughout the Niagara region. Trust us for quality craftsmanship and reliable service.">
+    <meta name="keywords" content="home renovation, Niagara contractor, kitchen remodel, bathroom remodel, deck installation, basement finishing, trusted renovations, Reds Contracting, Niagara home improvement">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Reds Contracting - Quality Home Renovations">
+    <meta property="og:description" content="Reds Contracting - Niagara's trusted name for quality home renovations and dependable construction services. Bringing your vision to life with expert craftsmanship.">
+    <meta property="og:image" content="logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@redscontracting">
+    
+    <link rel="icon" href="logo.jpg" type="image/jpg">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .header, .footer {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e63946;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #000;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+                z-index: 10;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.is-active {
+                display: none;
+            }
+
+            .hamburger-close {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                color: #fff;
+                font-size: 2rem;
+                border: none;
+                cursor: pointer;
+                z-index: 15;
+            }
+        }
+
+        .hero-section {
+            background: url('hero-background.jpg') center/cover no-repeat;
+            /*  background: url('services-background.jpg') center/cover no-repeat;*/
+            color: #fff;
+            padding: 150px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .hero-section h1, .hero-section p, .cta-button {
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            background: #e63946;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background: #b22222;
+            transform: scale(1.05);
+        }
+
+        .about-section {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+
+        .services-section {
+           /*  background: url('hero-background.jpg') center/cover no-repeat;*/
+            background: url('services-background.jpg') center/cover no-repeat;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .projects-section {
+            background: url('HeaderBackground.jpg') center/cover no-repeat;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .service-cards, .project-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-card, .project-item {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover, .project-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img, .project-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .service-image, .project-image {
+            width: 100%;
+        }
+
+        .project-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        .project-item, .service-card {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width: calc(25% - 40px);
+            height: auto;
+            flex-grow: 1;
+        }
+
+        .project-item {
+            width: calc(25% - 40px);
+        }
+
+        .service-card {
+            width: calc(20% - 40px);
+        }
+
+        @media screen and (max-width: 1080px) {
+            .project-item {
+                width: calc(50% - 40px);
+            }
+            .project-image {
+                max-height: 600px;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+            }
+
+            .service-card {
+                width: calc(45% - 40px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .project-item {
+                width: calc(100% - 40px);
+            }
+            .project-image {
+                max-height: 400px;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+            }
+            .service-card {
+                width: calc(100% - 40px);
+            }
+            .service-image {
+                max-height: 400px;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+            }
+        }
+
+        .project-description {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            color: #fff;
+        }
+
+        .testimonial {
+            display: block;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .toggle-button {
+            background: #e63946;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+            border-radius: 5px;
+        }
+
+        .toggle-button:hover {
+            background: #d62839;
+        }
+
+        .quote-section {
+            background: linear-gradient(to right, #e63946, #f78c6b);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-section {
+            background: #f1f1f1;
+            color: #000;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .quote-form {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @media screen and (max-width: 1080px) {
+            .quote-form {
+                max-width: 600px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .quote-form {
+                max-width: 100%;
+            }
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .quote-form input, .quote-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .quote-form button {
+            background: #000;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .quote-form button:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .checkbox-group label {
+            background: #e63946;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .checkbox-group label:hover {
+            background: #d62839;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-group input[type="checkbox"]:checked + label {
+            background: #000;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #e63946;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #e63946;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+   (function() {
+       emailjs.init("YOUR_PUBLIC_KEY"); // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
+   })();
+</script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+            <img src="logo.jpg" alt="Reds Contracting Logo" class="logo">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#quote">Request a Quote</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+        <button class="hamburger-close" onclick="toggleMenu()" style="display: none;">X</button>
+    </header>
+    
+    <section id="home" class="hero-section">
+        <h1>Transform Your Home with Expert Craftsmanship by Reds Contracting</h1>
+        <p>Offering reliable and high-quality renovation and construction services across the Niagara region. With a focus on trust, quality, and excellent client relationships, Reds Contracting turns your renovation dreams into reality.</p>
+        <button class="cta-button" onclick="document.getElementById('quote').scrollIntoView({behavior: 'smooth'});">Get a Quote</button>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Reds Contracting</h2>
+        <p>Since 2021, Reds Contracting has been committed to providing high-quality home renovation services in the Niagara region. Founded by Jesse Koteles, our mission is to bring your renovation dreams to life while ensuring a stress-free and exciting process. We focus on quality craftsmanship, integrity, and building lasting client relationships.</p>
+        <img src="about-jesse.jpg" alt="Jesse Koteles - Owner and Founder" class="about-image">
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="services-header" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)); padding: 20px; border-radius: 10px; display: inline-block; max-width: fit-content;">
+            <h2>Explore Our Renovation Services</h2>
+            <p></p>
+        </div></p>
+        <div class="service-cards">
+            <div class="service-card">
+                <img  class="service-image" src="services-renovations.jpg" alt="Interior Renovations">
+                <h3>Interior/Exterior Renovations</h3>
+                <p>Transform your living space, inside or out, with our high-quality renovation services.</p>
+            </div>
+            <div class="service-card">
+                <img  class="service-image" src="services-bathroom.jpg" alt="Bathroom and Kitchen Remodels">
+                <h3>Bathrooms/Kitchens</h3>
+                <p>Upgrade your kitchen or bathroom with customized designs, high-quality fixtures, and a modern look that fits your style and needs.</p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" src="services-deck.jpg" alt="Decks and Fences">
+                <h3>Decks/Fences</h3>
+                <p>Expand your living area to the outdoors with our deck and fencing solutions.</p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" src="services-basement.jpg" alt="Basement Finishing">
+                <h3>Basements</h3>
+                <p>Make the most of your basement with a custom renovation that matches your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="quote-section">
+        <h2>Get Your Free Quote Today</h2>
+        <p>Ready to bring your vision to life? Tell us about your project, and we'll provide you with a free, no-obligation quote tailored to your needs.</p>
+        <form class="quote-form">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Location" required>
+            <textarea placeholder="Tell us about your project" required></textarea>
+            <label>Services of Interest:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="home-renovations">
+                <label for="home-renovations">Home Renovations</label>
+
+                <input type="checkbox" id="custom-additions">
+                <label for="custom-additions">Custom Additions</label>
+
+                <input type="checkbox" id="general-contracting">
+                <label for="general-contracting">General Contracting</label>
+
+                <input type="checkbox" id="other">
+                <label for="other">Other</label>
+            </div>
+            <button type="submit">Request a Quote</button>
+        </form>
+    </section>
+<!--
+    <section id="projects" class="projects-section">
+        <h2>Our Completed Projects Showcase</h2>
+        <p>Explore our portfolio of completed projects to see the quality craftsmanship and attention to detail that sets Reds Contracting apart. Each project is a testament to our dedication to creating beautiful, functional spaces for our clients.</p>
+        <div class="project-gallery">
+            <div class="project-item">
+                <img class="project-image" src="https://picsum.photos/1200/800" alt="Project 1">
+                <h3>Kitchen Renovation - Niagara Falls</h3>
+                <p>Complete kitchen remodel featuring modern cabinetry, upgraded countertops, and new appliances. Our client was thrilled with the results!</p>
+                <div class="testimonial">
+                    <p>"Reds Contracting transformed our outdated kitchen into a beautiful, modern space that we absolutely love. The team was professional and easy to work with!" - Sarah J.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img class="project-image" src="https://picsum.photos/1200/800" alt="Project 2">
+                <h3>Deck Installation - St. Catharines</h3>
+                <p>We built a spacious and sturdy deck to expand our client's outdoor living space. The deck is perfect for entertaining guests and enjoying the outdoors.</p>
+                <div class="testimonial">
+                    <p>"The new deck has completely transformed our backyard. We love spending time out here now. Thanks to Jesse and his team for their hard work!" - Mark L.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img class="project-image" src="https://picsum.photos/1200/800" alt="Project 3">
+                <h3>Basement Finishing - Welland</h3>
+                <p>We finished this basement to create a cozy, functional living area. Features include custom shelving, modern lighting, and a comfortable living space.</p>
+                <div class="testimonial">
+                    <p>"Our basement was just wasted space before, but now it's our favorite room in the house. Reds Contracting did a fantastic job!" - Emily R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Reds Contracting Today</h2>
+        <p>Have questions or ready to start your renovation journey? Drop us a message, and our friendly team will be in touch to guide you through the next steps.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit" style="background: #d62839; color: #fff; padding: 15px 20px; font-size: 1.2rem; border-radius: 10px; transition: background 0.3s, transform 0.2s;">Send</button>
+        </form>
+    </section>
+-->
+    <footer class="footer">
+        <h3>Serving the Niagara Region Since 2021</h3>
+        <div class="social-links">
+            <a href="https://www.facebook.com/redscontractingniagara" target="_blank"><img src="facebook.svg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/reds.contracting/" target="_blank"><img src="instagram.svg" alt="Instagram"></a>
+        </div>
+        <p>Email: <a href="mailto:Reds.Contracting@outlook.com">Reds.Contracting@outlook.com</a> | Phone: <a href="tel:19053510168">+1 905-351-0168</a></p>
+        <p>&copy; 2024 Reds Contracting – All rights reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        const closeButton = document.querySelector('.hamburger-close');
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('is-active');
+        closeButton.style.display = navLinks.classList.contains('active') ? 'flex' : 'none';
+    }
+
+    document.querySelector('.cta-button').addEventListener('click', function() {
+        document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Handle Request a Quote Form Submission
+    document.querySelector('.quote-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        emailjs.sendForm('service_s3a2fyk', 'template_ac6orv3', this)
+            .then(function(response) {
+                alert('Quote Request Sent! Thank you.');
+            }, function(error) {
+                alert('FAILED... Please try again.', error);
+            });
+    });
+
+    // Handle Contact Us Form Submission
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        emailjs.sendForm('service_s3a2fyk', 'YOUR_TEMPLATE_ID', this)
+            .then(function(response) {
+                alert('Message Sent! We will get back to you soon.');
+            }, function(error) {
+                alert('FAILED... Please try again.', error);
+            });
+    });
+</script>
+</body>
+</html>

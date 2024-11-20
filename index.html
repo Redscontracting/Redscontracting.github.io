@@ -15,7 +15,6 @@
     <meta name="twitter:site" content="@redscontracting">
     
     <link rel="icon" href="logo.jpg" type="image/jpg">
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             margin: 0;
@@ -112,12 +111,21 @@
         }
 
         .hero-section {
-            background: url('hero-background.jpg') center/cover no-repeat;
+            background: 
+                linear-gradient(
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0.2)
+            ),
+            url('hero-background1.jpg') center/cover no-repeat;
             /*  background: url('services-background.jpg') center/cover no-repeat;*/
             color: #fff;
             padding: 150px 20px;
             text-align: center;
             position: relative;
+            margin: 0;
+            font-size: 1.5rem;
+            background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
         }
 
         .hero-section::after {
@@ -131,10 +139,19 @@
             z-index: 0;
         }
 
-        .hero-section h1, .hero-section p, .cta-button {
+        .hero-section h1 {
             color: #fff;
             position: relative;
             z-index: 2;
+            font-size: 3rem;
+        }
+
+         .hero-section p, .cta-button {
+            color: #fff;
+            position: relative;
+            z-index: 2;
+            font-size: 1.5rem;
+}
         }
 
         .cta-button {
@@ -333,16 +350,22 @@
             padding: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
+        
+        @media screen and (min-width: 1081px) {
+            .quote-form {
+                max-width: 760px;
+            }
+        }
 
         @media screen and (max-width: 1080px) {
             .quote-form {
-                max-width: 600px;
+                max-width: 80%;
             }
         }
 
         @media screen and (max-width: 768px) {
             .quote-form {
-                max-width: 100%;
+                max-width: 90%;
             }
         }
 

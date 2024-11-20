@@ -442,12 +442,6 @@
             transform: scale(1.2);
         }
     </style>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-   (function() {
-       emailjs.init("YOUR_PUBLIC_KEY"); // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
-   })();
-</script>
 </head>
 <body>
     <header class="header">
@@ -487,7 +481,7 @@
         <div class="services-header" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)); padding: 20px; border-radius: 10px; display: inline-block; max-width: fit-content;">
             <h2>Explore Our Renovation Services</h2>
             <p></p>
-        </div></p>
+        </div>
         <div class="service-cards">
             <div class="service-card">
                 <img  class="service-image" src="services-renovations.jpg" alt="Interior Renovations">
@@ -516,23 +510,23 @@
         <h2>Get Your Free Quote Today</h2>
         <p>Ready to bring your vision to life? Tell us about your project, and we'll provide you with a free, no-obligation quote tailored to your needs.</p>
         <form class="quote-form">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="text" placeholder="Location" required>
-            <textarea placeholder="Tell us about your project" required></textarea>
+            <input type="text" name="quote_name" placeholder="Name" required>
+            <input type="email" name="quote_email" placeholder="Email Address" required>
+            <input type="tel" name="quote_phone" placeholder="Phone" required>
+            <input type="text" name="quote_location" placeholder="Location" required>
+            <textarea name="quote_details" placeholder="Tell us about your project" required></textarea>
             <label>Services of Interest:</label>
             <div class="checkbox-group">
-                <input type="checkbox" id="home-renovations">
+                <input type="checkbox"  name="quote_interest_renovations"  id="home-renovations"> 
                 <label for="home-renovations">Home Renovations</label>
 
-                <input type="checkbox" id="custom-additions">
+                <input type="checkbox" name="quote_interest_additions" id="custom-additions">
                 <label for="custom-additions">Custom Additions</label>
 
-                <input type="checkbox" id="general-contracting">
+                <input type="checkbox" name="quote_interest_contracting" id="general-contracting">
                 <label for="general-contracting">General Contracting</label>
 
-                <input type="checkbox" id="other">
+                <input type="checkbox" name="quote_interest_other" id="other">
                 <label for="other">Other</label>
             </div>
             <button type="submit">Request a Quote</button>
@@ -574,16 +568,16 @@
         <h2>Contact Reds Contracting Today</h2>
         <p>Have questions or ready to start your renovation journey? Drop us a message, and our friendly team will be in touch to guide you through the next steps.</p>
         <form class="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone" required>
-            <textarea placeholder="Message" required></textarea>
+            <input type="text"  name="contact_name" placeholder="Name" required>
+            <input type="email" name="contact_email" placeholder="Email" required>
+            <input type="tel" name="contact_phone" placeholder="Phone" required>
+            <textarea name="contact_message" placeholder="Message" required></textarea>
             <button type="submit" style="background: #d62839; color: #fff; padding: 15px 20px; font-size: 1.2rem; border-radius: 10px; transition: background 0.3s, transform 0.2s;">Send</button>
         </form>
     </section>
 -->
     <footer class="footer">
-        <h3>Serving the Niagara Region Since 2021</h3>
+        <h3>Serving the Niagara Region in Canada Since 2021</h3>
         <div class="social-links">
             <a href="https://www.facebook.com/redscontractingniagara" target="_blank"><img src="facebook.svg" alt="Facebook"></a>
             <a href="https://www.instagram.com/reds.contracting/" target="_blank"><img src="instagram.svg" alt="Instagram"></a>
@@ -593,6 +587,12 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+        emailjs.init("NV6C7W3jCINaI-u9m"); 
+         })();
+    </script>
     <script>
     function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
@@ -611,7 +611,7 @@
     document.querySelector('.quote-form').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        emailjs.sendForm('service_s3a2fyk', 'template_ac6orv3', this)
+        emailjs.sendForm('service_s3a2fyk', 'template_0y7rceq', this)
             .then(function(response) {
                 alert('Quote Request Sent! Thank you.');
             }, function(error) {
@@ -623,7 +623,7 @@
     document.querySelector('.contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        emailjs.sendForm('service_s3a2fyk', 'YOUR_TEMPLATE_ID', this)
+        emailjs.sendForm('service_s3a2fyk', 'template_ej9t2jh', this)
             .then(function(response) {
                 alert('Message Sent! We will get back to you soon.');
             }, function(error) {

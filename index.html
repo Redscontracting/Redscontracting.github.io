@@ -26,12 +26,14 @@
                 <div></div>
                 <div></div>
                 <div></div>
+                <div></div>
+                <div></div>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#quote">Request a Quote</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <!-- <li><a href="#projects">Projects</a></li> -->
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
 
@@ -64,30 +66,61 @@
             <h2>Explore Our Renovation Services</h2>
             <!-- <p></p> -->
         </div>
-        <div class="service-cards">
-            <div class="service-card">
-                <img class="service-image" src="services-renovations.jpg" alt="Interior Renovations">
-                <h3>Interior/Exterior Renovations</h3>
-                <p>Transform your living space, inside or out, with our high-quality renovation services.</p>
-            </div>
-            <div class="service-card">
-                <img class="service-image" src="services-bathroom.jpg" alt="Bathroom and Kitchen Remodels">
-                <h3>Bathrooms/Kitchens</h3>
-                <p>Upgrade your kitchen or bathroom with customized designs, high-quality fixtures, and a modern look that fits your style and needs.</p>
-            </div>
-            <div class="service-card">
-                <img class="service-image" src="services-deck.jpg" alt="Decks and Fences">
-                <h3>Decks/Fences</h3>
-                <p>Expand your living area to the outdoors with our deck and fencing solutions.</p>
-            </div>
-            <div class="service-card">
-                <img class="service-image" src="services-basement.jpg" alt="Basement Finishing">
-                <h3>Basements</h3>
-                <p>Make the most of your basement with a custom renovation that matches your needs.</p>
+        <div class="text-wrapper">
+            <div class="service-cards">
+                <div class="service-card">
+                    <img class="service-image" src="services-renovations.jpg" alt="Interior Renovations">
+                    <h3>Interior/Exterior Renovations</h3>
+                    <p>Transform your living space, inside or out, with our high-quality renovation services.</p>
+                </div>
+                <div class="service-card">
+                    <img class="service-image" src="services-bathroom.jpg" alt="Bathroom and Kitchen Remodels">
+                    <h3>Bathrooms/Kitchens</h3>
+                    <p>Upgrade your kitchen or bathroom with customized designs, high-quality fixtures, and a modern look that fits your style and needs.</p>
+                </div>
+                <div class="service-card">
+                    <img class="service-image" src="services-deck.jpg" alt="Decks and Fences">
+                    <h3>Decks/Fences</h3>
+                    <p>Expand your living area to the outdoors with our deck and fencing solutions.</p>
+                </div>
+                <div class="service-card">
+                    <img class="service-image" src="services-basement.jpg" alt="Basement Finishing">
+                    <h3>Basements</h3>
+                    <p>Make the most of your basement with a custom renovation that matches your needs.</p>
+                </div>
             </div>
         </div>
     </section>
+    <section id="quote" class="quote-section">
+        <h2>Request a Personalized Consultation</h2>
+        <div class="text-wrapper">
+            <p>Planning a distinctive project? Share your vision with us, and we’ll follow up with a personalized consultation and detailed estimate—no obligation, just craftsmanship-focused conversation.</p>
+        </div>
+        <form class="quote-form">
+            <input type="text" name="quote_name" placeholder="Full Name" required>
+            <input type="email" name="quote_email" placeholder="Email Address" required>
+            <input type="tel" name="quote_phone" placeholder="Phone Number" required>
+            <input type="text" name="quote_location" placeholder="Project Location" required>
+            <textarea name="quote_details" placeholder="Tell us about your project, vision, or timeline" required></textarea>
 
+            <label>Type of Project:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="quote_interest_renovations" id="home-renovations">
+                <label for="home-renovations">Home Renovations</label>
+
+                <input type="checkbox" name="quote_interest_additions" id="custom-additions">
+                <label for="custom-additions">Custom Additions</label>
+
+                <input type="checkbox" name="quote_interest_contracting" id="general-contracting">
+                <label for="general-contracting">General Contracting</label>
+
+                <input type="checkbox" name="quote_interest_other" id="other">
+                <label for="other">Something Else</label>
+            </div>
+            <button type="submit">Get a Quote</button>
+        </form>
+    </section>
+    <!--
     <section id="quote" class="quote-section">
         <h2>Get Your Free Quote Today</h2>
         <p>Ready to bring your vision to life? Tell us about your project, and we'll provide you with a free, no-obligation quote tailored to your needs.</p>
@@ -113,7 +146,7 @@
             </div>
             <button type="submit">Request a Quote</button>
         </form>
-    </section>
+    </section> -->
     <!--
     <section id="projects" class="projects-section">
         <h2>Our Completed Projects Showcase</h2>

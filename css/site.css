@@ -100,9 +100,7 @@ body {
 
 .hero-section {
     background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../hero-background1.jpg') center/cover no-repeat;
-    /* Ensure you have a background image */
     color: #fff;
-    /* Ensure text is white for contrast */
     position: relative;
     text-align: center;
     padding: 80px 20px;
@@ -132,8 +130,10 @@ body {
 .hero-section h1 {
     color: #fff;
     position: relative;
+    text-shadow: 2px 2px 2x rgba(0, 0, 0, 0.75);
     z-index: 2;
     font-size: 2.75rem;
+    font-weight: 750;
 }
 
 .hero-section p {
@@ -190,7 +190,7 @@ body {
 
 .about-section {
     background: #f8f9fa;
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -201,7 +201,8 @@ body {
 }
 
 .about-section .text-wrapper,
-.services-section .text-wrapper {
+.services-section .text-wrapper,
+.quote-section .text-wrapper {
     padding: 20px;
     max-width: 1280px;
     margin: 0 auto;
@@ -209,7 +210,7 @@ body {
 
 @media screen and (min-width: 768px) {
     .services-section .text-wrapper {
-        padding: 50px;
+        padding: 40px;
     }
 }
 
@@ -225,15 +226,16 @@ body {
 /* Services Section */
 
 .services-section {
-    background: url('../services-background.jpg') center/cover no-repeat;
-    padding: 80px 20px;
+    /* background: url('../services-background.jpg') center/cover no-repeat; */
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../services-background.jpg') center/cover no-repeat;
+    padding: 40px 20px;
     text-align: center;
     color: #fff;
 }
 
 .projects-section {
     background: url('../HeaderBackground.jpg') center/cover no-repeat;
-    padding: 80px 20px;
+    padding: 40px 20px;
     text-align: center;
     color: #fff;
 }
@@ -258,7 +260,7 @@ body {
 
 .service-card,
 .project-item {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -390,7 +392,7 @@ body {
 .quote-section {
     background: linear-gradient(to right, #e63946, #f78c6b);
     color: #fff;
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -503,7 +505,7 @@ body {
 .footer {
     text-align: center;
     padding: 20px;
-    font-size: 1rem;
+    /*  font-size: 1rem; */
 }
 
 .footer a {

@@ -35,7 +35,6 @@ body {
 }
 
 .nav-links a {
-    color: #e63946;
     color: #fff;
     text-decoration: none;
     font-size: 1.25rem;
@@ -98,14 +97,16 @@ body {
 
 /* Hero Section */
 
+.hero,
 .hero-section {
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../hero-background1.jpg') center/cover no-repeat;
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/index/hero-background.jpg') center/cover no-repeat;
     color: #fff;
     position: relative;
     text-align: center;
     padding: 80px 20px;
 }
 
+.hero .text-wrapper,
 .hero-section .text-wrapper {
     background: rgba(0, 0, 0, 0.5);
     /* Semi-transparent black background */
@@ -116,6 +117,7 @@ body {
     text-align: center;
 }
 
+.hero::after,
 .hero-section::after {
     content: '';
     position: absolute;
@@ -127,20 +129,23 @@ body {
     z-index: 0;
 }
 
+.hero h1,
 .hero-section h1 {
     color: #fff;
     position: relative;
-    text-shadow: 2px 2px 2x rgba(0, 0, 0, 0.75);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
     z-index: 2;
     font-size: 2.75rem;
     font-weight: 750;
 }
 
+.hero p,
 .hero-section p {
     margin-block-start: 0;
     margin-block-end: 0;
 }
 
+.hero p,
 .hero-section p,
 .cta-button {
     color: #fff;
@@ -149,7 +154,8 @@ body {
     font-size: 1.5rem;
 }
 
-.hero-section cta-button {
+.hero .cta-button,
+.hero-section .cta-button {
     background-color: rgba(230, 57, 70, 0.9);
 }
 
@@ -162,17 +168,21 @@ body {
     font-size: 1.2rem;
     transition: background 0.3s;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .cta-button:hover {
     background: #b22222;
     transform: scale(1.05);
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 768px) {
+    .hero,
     .hero-section {
         padding: 150px 50px;
     }
+    .hero h1,
     .hero-section h1 {
         font-size: 3.5rem;
         max-width: 1000px;
@@ -183,6 +193,90 @@ body {
         margin-block-start: 0;
         margin-block-end: 0;
     }
+}
+
+
+/* --- New Hero Banner for Service Pages --- */
+
+.hero-service {
+    background: url('../images/services/kitchens/kitchen-hero.jpg') center center/cover no-repeat;
+}
+
+
+/* --- Section General --- */
+
+.section {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.section:nth-child(even) {
+    /*  background: #f9f9f9; */
+    background: linear-gradient(to right, #f9f9f9, #f1f1f1);
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        padding: 30px 10px;
+    }
+}
+
+
+/* --- Service Features List --- */
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.service-features li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.service-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #d63333;
+    /* Reds Contracting Red */
+}
+
+
+/* --- Gallery Grid --- */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* --- Testimonial Block --- */
+
+.testimonial blockquote {
+    font-style: italic;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.testimonial cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #d63333;
 }
 
 
@@ -202,7 +296,8 @@ body {
 
 .about-section .text-wrapper,
 .services-section .text-wrapper,
-.quote-section .text-wrapper {
+.quote-section .text-wrapper,
+.section .text-wrapper {
     padding: 20px;
     max-width: 1280px;
     margin: 0 auto;
@@ -214,6 +309,8 @@ body {
     }
 }
 
+.hero h1,
+.hero h2,
 .hero-section h1,
 .hero-section h2,
 .services-section h2,
@@ -227,14 +324,14 @@ body {
 
 .services-section {
     /* background: url('../services-background.jpg') center/cover no-repeat; */
-    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../services-background.jpg') center/cover no-repeat;
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/index/services-background.jpg') center/cover no-repeat;
     padding: 40px 20px;
     text-align: center;
     color: #fff;
 }
 
 .projects-section {
-    background: url('../HeaderBackground.jpg') center/cover no-repeat;
+    background: url('../images/index/HeaderBackground.jpg') center/cover no-repeat;
     padding: 40px 20px;
     text-align: center;
     color: #fff;
@@ -359,9 +456,9 @@ body {
 }
 
 
-/* Testimonial Section */
+/* Showcase Testimonial Section */
 
-.testimonial {
+.showcase-testimonial {
     display: block;
     padding: 20px;
     background: rgba(0, 0, 0, 0.7);

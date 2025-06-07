@@ -21,7 +21,7 @@ document.querySelector('.button--cta').addEventListener('click', function() {
 document.querySelector('.quote-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    /* uncomment in production
+    /* uncomment in production */
        emailjs.sendForm('service_s3a2fyk', 'template_0y7rceq', this)
            .then(function(response) {
                alert('Quote Request Sent! Thank you.');
@@ -29,7 +29,7 @@ document.querySelector('.quote-form').addEventListener('submit', function(e) {
                alert('FAILED... Please try again.', error);
            }
        );
-       */
+      
 });
 
 /*** To implement! ***
